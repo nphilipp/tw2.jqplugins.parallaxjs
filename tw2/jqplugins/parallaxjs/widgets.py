@@ -20,7 +20,7 @@
 
 from __future__ import absolute_import
 
-from tw2.core import Param, Widget
+from tw2.core import JSSource, Param, Widget
 from tw2.jquery import jquery_js
 
 from .resources import parallaxjs_js
@@ -28,9 +28,16 @@ from .resources import parallaxjs_js
 __all__ = ('ParallaxImageWidget',)
 
 
+# work around parallax.js problem with jQuery 3.1.x
+# https://github.com/pixelcog/parallax.js/issues/166
+workaround_js = JSSource(src="""$(window).on('load', function(){
+    $('[data-parallax="scroll"]').parallax();
+})""")
+
+
 class ParallaxImageWidget(Widget):
 
-    resources = [jquery_js, parallaxjs_js]
+    resources = [jquery_js, parallaxjs_js, workaround_js]
 
     template = "tw2.jqplugins.parallaxjs.templates.parallax_image"
 
