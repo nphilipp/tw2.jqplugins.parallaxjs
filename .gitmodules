@@ -1,0 +1,3 @@
+[submodule "parallax.js"]
+	path = parallax.js
+	url = https://github.com/pixelcog/parallax.js.git
