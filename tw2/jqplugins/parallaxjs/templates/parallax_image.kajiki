@@ -1,1 +1,1 @@
-<div xmlns:py="http://genshi.edgewall.org/" data-parallax="scroll" data-image-src="${w.image_src}" py:attrs="w.attrs"></div>
+<div xmlns:py="http://genshi.edgewall.org/" data-parallax="scroll" py:attrs="w.attrs"><noscript><img src="${w.attrs['data-image-src']}" /></noscript></div>
