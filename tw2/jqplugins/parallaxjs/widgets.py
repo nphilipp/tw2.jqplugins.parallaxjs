@@ -46,7 +46,7 @@ class ParallaxImageWidget(Widget):
         attribute=True, view_name='data-image-src',
     )
 
-    min_height = Param("The minimum height of the outer div.")
+    min_height = Param("The minimum height of the outer div.", default=None)
 
     def prepare(self):
         super(ParallaxImageWidget, self).prepare()
