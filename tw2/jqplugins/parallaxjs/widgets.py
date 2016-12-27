@@ -57,3 +57,8 @@ class ParallaxImageWidget(Widget):
             "min-height:" + self.min_height if self.min_height else None,
             self.attrs.get('style'))
         self.attrs['style'] = ";".join(x for x in s_parts if x)
+
+    @classmethod
+    def inject_resources(cls):
+        for res in cls.resources:
+            res.inject()
