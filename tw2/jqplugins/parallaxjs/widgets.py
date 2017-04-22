@@ -48,6 +48,9 @@ class ParallaxImageWidget(Widget):
 
     min_height = Param("The minimum height of the outer div.", default=None)
 
+    overlay_text = Param("Optional text to be overlayed over the image",
+                         default=None)
+
     def prepare(self):
         super(ParallaxImageWidget, self).prepare()
 
